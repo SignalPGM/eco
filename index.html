@@ -221,14 +221,70 @@
             animation-delay: 4s;
         }
 
+        /* Декоративные листья */
+        .leaf-decoration {
+            position: absolute;
+            z-index: 1;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .leaf-1 {
+            top: 20%;
+            left: 5%;
+            font-size: 120px;
+            color: var(--primary);
+            transform: rotate(-15deg);
+            animation: leafFloat 8s infinite ease-in-out;
+        }
+
+        .leaf-2 {
+            bottom: 15%;
+            right: 8%;
+            font-size: 100px;
+            color: var(--primary-dark);
+            transform: rotate(25deg);
+            animation: leafFloat 10s infinite ease-in-out 1s;
+        }
+
+        .leaf-3 {
+            top: 40%;
+            right: 15%;
+            font-size: 80px;
+            color: #27ae60;
+            transform: rotate(45deg);
+            animation: leafFloat 9s infinite ease-in-out 2s;
+        }
+
+        .leaf-4 {
+            bottom: 30%;
+            left: 10%;
+            font-size: 90px;
+            color: #2ecc71;
+            transform: rotate(-30deg);
+            animation: leafFloat 7s infinite ease-in-out 0.5s;
+        }
+
+        .leaf-5 {
+            top: 15%;
+            right: 5%;
+            font-size: 110px;
+            color: var(--primary);
+            transform: rotate(10deg);
+            animation: leafFloat 11s infinite ease-in-out 1.5s;
+        }
+
         /* Sections */
         section {
             padding: 100px 0;
+            position: relative;
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
         }
 
         .section-title h2 {
@@ -257,6 +313,8 @@
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 40px;
+            position: relative;
+            z-index: 2;
         }
 
         .tip-card {
@@ -267,6 +325,8 @@
             transition: var(--transition);
             opacity: 0;
             transform: translateY(30px);
+            position: relative;
+            z-index: 2;
         }
 
         .tip-card:hover {
@@ -295,6 +355,8 @@
         .problems-list {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .problem-item {
@@ -309,6 +371,8 @@
             transition: var(--transition);
             opacity: 0;
             transform: translateX(-30px);
+            position: relative;
+            z-index: 2;
         }
 
         .problem-item:hover {
@@ -327,6 +391,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
+            position: relative;
+            z-index: 2;
         }
 
         .fact-card {
@@ -338,6 +404,8 @@
             transition: var(--transition);
             opacity: 0;
             transform: scale(0.9);
+            position: relative;
+            z-index: 2;
         }
 
         .fact-card:hover {
@@ -361,6 +429,8 @@
             align-items: center;
             gap: 50px;
             margin-top: 40px;
+            position: relative;
+            z-index: 2;
         }
 
         .recycling-text {
@@ -380,6 +450,8 @@
             color: white;
             font-size: 1.5rem;
             font-weight: 700;
+            position: relative;
+            z-index: 2;
         }
 
         /* Presentation Section */
@@ -399,6 +471,8 @@
             border-radius: 20px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 2;
         }
 
         .presentation-header {
@@ -443,6 +517,7 @@
             background-color: var(--dark);
             color: white;
             padding: 70px 0 30px;
+            position: relative;
         }
 
         .footer-content {
@@ -450,6 +525,8 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
         }
 
         .footer-column h3 {
@@ -495,6 +572,8 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
             color: #aaa;
+            position: relative;
+            z-index: 2;
         }
 
         /* Animations */
@@ -514,6 +593,15 @@
             }
         }
 
+        @keyframes leafFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(var(--start-rotate));
+            }
+            50% {
+                transform: translateY(-25px) rotate(calc(var(--start-rotate) + 10deg));
+            }
+        }
+
         /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
@@ -530,6 +618,10 @@
             
             .presentation-content {
                 padding: 30px;
+            }
+            
+            .leaf-decoration {
+                display: none;
             }
         }
 
@@ -646,10 +738,10 @@
             <nav>
                 <ul>
                     <li><a href="#home" class="active">Bosh sahifa</a></li>
+                    <li><a href="#presentation">Taqdimot</a></li>
                     <li><a href="#tips">Ekomaslahatlar</a></li>
                     <li><a href="#problems">Muammolar</a></li>
                     <li><a href="#recycling">Qayta ishlash</a></li>
-                    <li><a href="#presentation">Taqdimot</a></li>
                     <li><a href="#facts">Faktlar</a></li>
                 </ul>
             </nav>
@@ -663,16 +755,27 @@
     <div class="mobile-menu" id="mobileMenu">
         <ul>
             <li><a href="#home" class="active">Bosh sahifa</a></li>
+            <li><a href="#presentation">Taqdimot</a></li>
             <li><a href="#tips">Ekomaslahatlar</a></li>
             <li><a href="#problems">Muammolar</a></li>
             <li><a href="#recycling">Qayta ishlash</a></li>
-            <li><a href="#presentation">Taqdimot</a></li>
             <li><a href="#facts">Faktlar</a></li>
         </ul>
     </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <!-- Декоративные листья -->
+        <div class="leaf-decoration leaf-1">
+            <i class="fas fa-leaf"></i>
+        </div>
+        <div class="leaf-decoration leaf-2">
+            <i class="fas fa-leaf"></i>
+        </div>
+        <div class="leaf-decoration leaf-3">
+            <i class="fas fa-leaf"></i>
+        </div>
+        
         <div class="hero-bg-shapes">
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
@@ -681,88 +784,20 @@
         <div class="container hero-content">
             <h1>Kunlik ekologik maslahat</h1>
             <p>Keling, birgalikda yanada yaxshi yashaymiz! O'zbekistonning ekologiyasini yaxshilash uchun kichik qadamlar bilan katta o'zgarishlarga erishishimiz mumkin.</p>
-            <a href="#tips" class="hero-btn">Ekomaslahatlarni ko'rish</a>
-        </div>
-    </section>
-
-    <!-- Daily Tips Section -->
-    <section id="tips">
-        <div class="container">
-            <div class="section-title">
-                <h2>Kunlik ekologik maslahatlar</h2>
-                <p>Har kuni amalga oshirish oson bo'lgan ekologik maslahatlar</p>
-            </div>
-            <div class="tips-grid" id="tipsGrid">
-                <!-- Tips will be loaded by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Water Saving Section -->
-    <section id="water" style="background-color: #f0f9ff;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Suv tejash maslahatlari</h2>
-                <p>O'zbekiston - suv havzasi chegaralangan mamlakat, suvni tejash juda muhim</p>
-            </div>
-            <div class="tips-grid">
-                <div class="tip-card" data-delay="0">
-                    <i class="fas fa-tint"></i>
-                    <h3>Dushda yuvining</h3>
-                    <p>Vannada yuvinmasdan, dushda yuvinish orqali suvni 70% gacha tejashingiz mumkin.</p>
-                </div>
-                <div class="tip-card" data-delay="0.2">
-                    <i class="fas fa-faucet"></i>
-                    <h3>Kranni yopib qo'ying</h3>
-                    <p>Tish yotkayaptida yoki sovunlanayaptida kranni yopib qo'ying, soatiga 6 litr suv tejashingiz mumkin.</p>
-                </div>
-                <div class="tip-card" data-delay="0.4">
-                    <i class="fas fa-tree"></i>
-                    <h3>Qurg'oqchilikka chidamli o'simliklar</h3>
-                    <p>Uyingiz atrofiga kam suv sarflaydigan o'simliklar eking.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ecological Problems Section -->
-    <section id="problems">
-        <div class="container">
-            <div class="section-title">
-                <h2>O'zbekistondagi ekologik muammolar</h2>
-                <p>Bizning mamlakatimizdagi asosiy ekologik muammolar</p>
-            </div>
-            <div class="problems-list" id="problemsList">
-                <!-- Problems will be loaded by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Recycling Section -->
-    <section id="recycling" style="background-color: #f9f9f9;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Qayta ishlash va chiqindilar</h2>
-                <p>Chiqindilarni ajratish va qayta ishlash - ekologiyani saqlashning asosiy yo'li</p>
-            </div>
-            
-            <div class="recycling-content">
-                <div class="recycling-text">
-                    <h3>Qayta ishlash qo'llanmasi</h3>
-                    <p>Qayta ishlashni to'g'ri tashkil qilish ekologik ta'sirni kamaytirishda muhim ahamiyatga ega. Plastik, shisha, metal va qog'oz chiqindilarini alohida ajratib qayta ishlash mumkin.</p>
-                    <p>Har bir oila chiqindilarni ajratish orqali yilda 1 tonnadan ortiq chiqindini qayta ishlash imkoniyatiga ega.</p>
-                    <h4 style="margin-top: 20px;">Qayta ishlash markazlari</h4>
-                    <p>Toshkent, Samarqand, Buxoro kabi shaharlarda qayta ishlash markazlari faoliyat ko'rsatmoqda. Ularda chiqindilar qabul qilinib, qayta ishlanadi.</p>
-                </div>
-                <div class="recycling-image">
-                    <div>EKOLOGIK TOZA DUNYO</div>
-                </div>
-            </div>
+            <a href="#presentation" class="hero-btn">Taqdimotni ko'rish</a>
         </div>
     </section>
 
     <!-- Presentation Section -->
     <section id="presentation" class="presentation">
+        <!-- Декоративные листья -->
+        <div class="leaf-decoration leaf-4">
+            <i class="fas fa-leaf"></i>
+        </div>
+        <div class="leaf-decoration leaf-5">
+            <i class="fas fa-leaf"></i>
+        </div>
+        
         <div class="container">
             <div class="presentation-content">
                 <div class="presentation-header">
@@ -793,8 +828,115 @@
         </div>
     </section>
 
+    <!-- Daily Tips Section -->
+    <section id="tips">
+        <!-- Декоративные листья -->
+        <div class="leaf-decoration" style="top: 10%; left: 3%; font-size: 70px; color: #2ecc71; transform: rotate(15deg); animation: leafFloat 8s infinite ease-in-out;">
+            <i class="fas fa-leaf"></i>
+        </div>
+        <div class="leaf-decoration" style="bottom: 20%; right: 5%; font-size: 60px; color: #27ae60; transform: rotate(-20deg); animation: leafFloat 9s infinite ease-in-out 1s;">
+            <i class="fas fa-leaf"></i>
+        </div>
+        
+        <div class="container">
+            <div class="section-title">
+                <h2>Kunlik ekologik maslahatlar</h2>
+                <p>Har kuni amalga oshirish oson bo'lgan ekologik maslahatlar</p>
+            </div>
+            <div class="tips-grid" id="tipsGrid">
+                <!-- Tips will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Water Saving Section -->
+    <section id="water" style="background-color: #f0f9ff;">
+        <!-- Декоративные листья -->
+        <div class="leaf-decoration" style="top: 15%; right: 8%; font-size: 80px; color: #3498db; transform: rotate(30deg); animation: leafFloat 10s infinite ease-in-out 0.5s;">
+            <i class="fas fa-leaf"></i>
+        </div>
+        
+        <div class="container">
+            <div class="section-title">
+                <h2>Suv tejash maslahatlari</h2>
+                <p>O'zbekiston - suv havzasi chegaralangan mamlakat, suvni tejash juda muhim</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card" data-delay="0">
+                    <i class="fas fa-tint"></i>
+                    <h3>Dushda yuvining</h3>
+                    <p>Vannada yuvinmasdan, dushda yuvinish orqali suvni 70% gacha tejashingiz mumkin.</p>
+                </div>
+                <div class="tip-card" data-delay="0.2">
+                    <i class="fas fa-faucet"></i>
+                    <h3>Kranni yopib qo'ying</h3>
+                    <p>Tish yotkayaptida yoki sovunlanayaptida kranni yopib qo'ying, soatiga 6 litr suv tejashingiz mumkin.</p>
+                </div>
+                <div class="tip-card" data-delay="0.4">
+                    <i class="fas fa-tree"></i>
+                    <h3>Qurg'oqchilikka chidamli o'simliklar</h3>
+                    <p>Uyingiz atrofiga kam suv sarflaydigan o'simliklar eking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecological Problems Section -->
+    <section id="problems">
+        <!-- Декоративные листья -->
+        <div class="leaf-decoration" style="top: 20%; left: 5%; font-size: 65px; color: #e74c3c; transform: rotate(-25deg); animation: leafFloat 7s infinite ease-in-out;">
+            <i class="fas fa-leaf"></i>
+        </div>
+        
+        <div class="container">
+            <div class="section-title">
+                <h2>O'zbekistondagi ekologik muammolar</h2>
+                <p>Bizning mamlakatimizdagi asosiy ekologik muammolar</p>
+            </div>
+            <div class="problems-list" id="problemsList">
+                <!-- Problems will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recycling Section -->
+    <section id="recycling" style="background-color: #f9f9f9;">
+        <!-- Декоративные листья -->
+        <div class="leaf-decoration" style="top: 10%; right: 10%; font-size: 90px; color: #2ecc71; transform: rotate(40deg); animation: leafFloat 11s infinite ease-in-out 1.5s;">
+            <i class="fas fa-leaf"></i>
+        </div>
+        <div class="leaf-decoration" style="bottom: 15%; left: 7%; font-size: 75px; color: #27ae60; transform: rotate(-15deg); animation: leafFloat 9s infinite ease-in-out 0.8s;">
+            <i class="fas fa-leaf"></i>
+        </div>
+        
+        <div class="container">
+            <div class="section-title">
+                <h2>Qayta ishlash va chiqindilar</h2>
+                <p>Chiqindilarni ajratish va qayta ishlash - ekologiyani saqlashning asosiy yo'li</p>
+            </div>
+            
+            <div class="recycling-content">
+                <div class="recycling-text">
+                    <h3>Qayta ishlash qo'llanmasi</h3>
+                    <p>Qayta ishlashni to'g'ri tashkil qilish ekologik ta'sirni kamaytirishda muhim ahamiyatga ega. Plastik, shisha, metal va qog'oz chiqindilarini alohida ajratib qayta ishlash mumkin.</p>
+                    <p>Har bir oila chiqindilarni ajratish orqali yilda 1 tonnadan ortiq chiqindini qayta ishlash imkoniyatiga ega.</p>
+                    <h4 style="margin-top: 20px;">Qayta ishlash markazlari</h4>
+                    <p>Toshkent, Samarqand, Buxoro kabi shaharlarda qayta ishlash markazlari faoliyat ko'rsatmoqda. Ularda chiqindilar qabul qilinib, qayta ishlanadi.</p>
+                </div>
+                <div class="recycling-image">
+                    <div>EKOLOGIK TOZA DUNYO</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Facts Section -->
     <section id="facts">
+        <!-- Декоративные листья -->
+        <div class="leaf-decoration" style="top: 25%; left: 8%; font-size: 85px; color: #3498db; transform: rotate(-10deg); animation: leafFloat 8s infinite ease-in-out 0.3s;">
+            <i class="fas fa-leaf"></i>
+        </div>
+        
         <div class="container">
             <div class="section-title">
                 <h2>Ekologik faktlar</h2>
@@ -808,6 +950,11 @@
 
     <!-- Footer -->
     <footer>
+        <!-- Декоративные листья -->
+        <div class="leaf-decoration" style="top: 20%; right: 15%; font-size: 70px; color: rgba(255,255,255,0.1); transform: rotate(25deg); animation: leafFloat 10s infinite ease-in-out;">
+            <i class="fas fa-leaf"></i>
+        </div>
+        
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -818,18 +965,18 @@
                     <h3>Menyu</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Bosh sahifa</a></li>
+                        <li><a href="#presentation">Taqdimot</a></li>
                         <li><a href="#tips">Ekomaslahatlar</a></li>
                         <li><a href="#water">Suv tejash</a></li>
-                        <li><a href="#problems">Muammolar</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Qo'shimcha</h3>
                     <ul class="footer-links">
+                        <li><a href="#problems">Muammolar</a></li>
                         <li><a href="#recycling">Qayta ishlash</a></li>
-                        <li><a href="#presentation">Taqdimot</a></li>
                         <li><a href="#facts">Ekologik faktlar</a></li>
-                        <li><a href="#">Yashil hayot maslahatlari</a></li>
+                        <li><a href="#presentation">Sirdaryo Texnikumi</a></li>
                     </ul>
                 </div>
             </div>
@@ -996,8 +1143,24 @@
                 });
             };
 
-            // Initial animation trigger
-            setTimeout(animateOnScroll, 500);
+            // Set up leaf animations
+            const setupLeafAnimations = () => {
+                const leaves = document.querySelectorAll('.leaf-decoration');
+                leaves.forEach((leaf, index) => {
+                    const style = window.getComputedStyle(leaf);
+                    const transform = style.transform;
+                    const matrix = new DOMMatrix(transform);
+                    const angle = Math.atan2(matrix.b, matrix.a) * (180 / Math.PI);
+                    
+                    leaf.style.setProperty('--start-rotate', `${angle}deg`);
+                });
+            };
+
+            // Initial setup
+            setTimeout(() => {
+                animateOnScroll();
+                setupLeafAnimations();
+            }, 500);
             
             // Listen for scroll events
             window.addEventListener('scroll', animateOnScroll);
