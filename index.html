@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Экология Узбекистана | Зелёная жизнь</title>
+    <title>O'zbekiston Ekologiyasi | Yashil Hayot</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -382,6 +382,62 @@
             font-weight: 700;
         }
 
+        /* Presentation Section */
+        .presentation {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+        }
+
+        .presentation-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .presentation-header h3 {
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .presentation-header p {
+            font-size: 1.2rem;
+            color: #ddd;
+            font-style: italic;
+        }
+
+        .presentation-body {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .presentation-body p {
+            margin-bottom: 20px;
+        }
+
+        .presentation-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            text-align: center;
+            padding: 25px;
+            background-color: rgba(46, 204, 113, 0.2);
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 4px solid var(--primary);
+        }
+
         /* Footer */
         footer {
             background-color: var(--dark);
@@ -471,6 +527,10 @@
             .recycling-image {
                 width: 100%;
             }
+            
+            .presentation-content {
+                padding: 30px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -506,6 +566,10 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .presentation-header h3 {
+                font-size: 1.8rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -519,6 +583,10 @@
             
             section {
                 padding: 70px 0;
+            }
+            
+            .presentation-content {
+                padding: 20px;
             }
         }
 
@@ -573,15 +641,16 @@
         <div class="container header-container">
             <div class="logo">
                 <i class="fas fa-leaf"></i>
-                <span>Зелёный Узбекистан</span>
+                <span>Yashil O'zbekiston</span>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home" class="active">Главная</a></li>
-                    <li><a href="#tips">Экосоветы</a></li>
-                    <li><a href="#problems">Экопроблемы</a></li>
-                    <li><a href="#recycling">Переработка</a></li>
-                    <li><a href="#facts">Факты</a></li>
+                    <li><a href="#home" class="active">Bosh sahifa</a></li>
+                    <li><a href="#tips">Ekomaslahatlar</a></li>
+                    <li><a href="#problems">Muammolar</a></li>
+                    <li><a href="#recycling">Qayta ishlash</a></li>
+                    <li><a href="#presentation">Taqdimot</a></li>
+                    <li><a href="#facts">Faktlar</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -593,11 +662,12 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="#home" class="active">Главная</a></li>
-            <li><a href="#tips">Экосоветы</a></li>
-            <li><a href="#problems">Экопроблемы</a></li>
-            <li><a href="#recycling">Переработка</a></li>
-            <li><a href="#facts">Факты</a></li>
+            <li><a href="#home" class="active">Bosh sahifa</a></li>
+            <li><a href="#tips">Ekomaslahatlar</a></li>
+            <li><a href="#problems">Muammolar</a></li>
+            <li><a href="#recycling">Qayta ishlash</a></li>
+            <li><a href="#presentation">Taqdimot</a></li>
+            <li><a href="#facts">Faktlar</a></li>
         </ul>
     </div>
 
@@ -609,9 +679,9 @@
             <div class="shape shape-3"></div>
         </div>
         <div class="container hero-content">
-            <h1>Кунлик экологик маслиҳат</h1>
-            <p>Келинг, биргаликда янада яхши яшаймиз! Узбекистоннинг экологиясини яхшилаш учун кичик қадамлар билан катта ўзгаришларга эришимиз мумкин.</p>
-            <a href="#tips" class="hero-btn">Экосоветларни кўриш</a>
+            <h1>Kunlik ekologik maslahat</h1>
+            <p>Keling, birgalikda yanada yaxshi yashaymiz! O'zbekistonning ekologiyasini yaxshilash uchun kichik qadamlar bilan katta o'zgarishlarga erishishimiz mumkin.</p>
+            <a href="#tips" class="hero-btn">Ekomaslahatlarni ko'rish</a>
         </div>
     </section>
 
@@ -619,8 +689,8 @@
     <section id="tips">
         <div class="container">
             <div class="section-title">
-                <h2>Кунлик экологик маслиҳатлар</h2>
-                <p>Хар куни амалга ошириш осон бўлган экологик маслиҳатлар</p>
+                <h2>Kunlik ekologik maslahatlar</h2>
+                <p>Har kuni amalga oshirish oson bo'lgan ekologik maslahatlar</p>
             </div>
             <div class="tips-grid" id="tipsGrid">
                 <!-- Tips will be loaded by JavaScript -->
@@ -632,24 +702,24 @@
     <section id="water" style="background-color: #f0f9ff;">
         <div class="container">
             <div class="section-title">
-                <h2>Суз тежаш маслиҳатлари</h2>
-                <p>Узбекистон - сув хазинаси чегараланган мамлакат, сувни тежаш жуда муҳим</p>
+                <h2>Suv tejash maslahatlari</h2>
+                <p>O'zbekiston - suv havzasi chegaralangan mamlakat, suvni tejash juda muhim</p>
             </div>
             <div class="tips-grid">
                 <div class="tip-card" data-delay="0">
                     <i class="fas fa-tint"></i>
-                    <h3>Душда ювининг</h3>
-                    <p>Ваннада ювинмасдан, душда ювиниш орқали сувни 70% гача тежашингиз мумкин.</p>
+                    <h3>Dushda yuvining</h3>
+                    <p>Vannada yuvinmasdan, dushda yuvinish orqali suvni 70% gacha tejashingiz mumkin.</p>
                 </div>
                 <div class="tip-card" data-delay="0.2">
                     <i class="fas fa-faucet"></i>
-                    <h3>Кранни ёпиб қўйинг</h3>
-                    <p>Тиш ёткаяптида ёки совунланаяптида крании ёпиб қўйинг, соатга 6 литр сув тежашингиз мумкин.</p>
+                    <h3>Kranni yopib qo'ying</h3>
+                    <p>Tish yotkayaptida yoki sovunlanayaptida kranni yopib qo'ying, soatiga 6 litr suv tejashingiz mumkin.</p>
                 </div>
                 <div class="tip-card" data-delay="0.4">
                     <i class="fas fa-tree"></i>
-                    <h3>Қуриқчиликка чўзимли ўсимликлар</h3>
-                    <p>Уйингиз атрофига кам сув сарфлайдиган ўсимликлар экинг.</p>
+                    <h3>Qurg'oqchilikka chidamli o'simliklar</h3>
+                    <p>Uyingiz atrofiga kam suv sarflaydigan o'simliklar eking.</p>
                 </div>
             </div>
         </div>
@@ -659,8 +729,8 @@
     <section id="problems">
         <div class="container">
             <div class="section-title">
-                <h2>Ўзбекистондаги экологик муаммолар</h2>
-                <p>Бизнинг мамлакатимиздаги асосий экологик муаммолар</p>
+                <h2>O'zbekistondagi ekologik muammolar</h2>
+                <p>Bizning mamlakatimizdagi asosiy ekologik muammolar</p>
             </div>
             <div class="problems-list" id="problemsList">
                 <!-- Problems will be loaded by JavaScript -->
@@ -672,20 +742,52 @@
     <section id="recycling" style="background-color: #f9f9f9;">
         <div class="container">
             <div class="section-title">
-                <h2>Қайта ишлаш ва чиқиндилар</h2>
-                <p>Чиқиндиларни ажратиш ва қайта ишлаш - экологияни сақлашнинг асосий йўли</p>
+                <h2>Qayta ishlash va chiqindilar</h2>
+                <p>Chiqindilarni ajratish va qayta ishlash - ekologiyani saqlashning asosiy yo'li</p>
             </div>
             
             <div class="recycling-content">
                 <div class="recycling-text">
-                    <h3>Қайта ишлаш қўлланмаси</h3>
-                    <p>Қайта ишлашни тўғри ташкил қилиш экологик таъсирни камайтиришда муҳим ахамиятга эга. Пластик, шиша, металл ва қоғоз чиқиндиларини алоҳида ажратиб қайта ишлаш мумкин.</p>
-                    <p>Ҳар бир оила чиқиндиларни ажратиш орқали йилда 1 тоннадан ортиқ чиқиндини қайта ишлаш имкониятига эга.</p>
-                    <h4 style="margin-top: 20px;">Қайта ишлаш марказлари</h4>
-                    <p>Тошкент, Самарқанд, Бухоро каби шаҳарларда қайта ишлаш марказлари фаолият кўрсатмоқда. Уларда чиқиндилар қабул қилиниб, қайта ишланади.</p>
+                    <h3>Qayta ishlash qo'llanmasi</h3>
+                    <p>Qayta ishlashni to'g'ri tashkil qilish ekologik ta'sirni kamaytirishda muhim ahamiyatga ega. Plastik, shisha, metal va qog'oz chiqindilarini alohida ajratib qayta ishlash mumkin.</p>
+                    <p>Har bir oila chiqindilarni ajratish orqali yilda 1 tonnadan ortiq chiqindini qayta ishlash imkoniyatiga ega.</p>
+                    <h4 style="margin-top: 20px;">Qayta ishlash markazlari</h4>
+                    <p>Toshkent, Samarqand, Buxoro kabi shaharlarda qayta ishlash markazlari faoliyat ko'rsatmoqda. Ularda chiqindilar qabul qilinib, qayta ishlanadi.</p>
                 </div>
                 <div class="recycling-image">
-                    <div>ЭКОЛОГИК ТОЗА ДУНЁ</div>
+                    <div>EKOLOGIK TOZA DUNYO</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Presentation Section -->
+    <section id="presentation" class="presentation">
+        <div class="container">
+            <div class="presentation-content">
+                <div class="presentation-header">
+                    <h3>Sirdaryo Ilg'or Kasbiy Mahorat Texnikumi</h3>
+                    <p>Ekologik mas'uliyat - kelajak avlod oldidagi burchimiz</p>
+                </div>
+                <div class="presentation-body">
+                    <p>Assalomu alaykum, hurmatli hay'at a'zolari va tomoshabinlar!</p>
+                    <p>Biz bugun sizlarga o'zimiz yashayotgan hudud — bizning uyimiz, bizning mas'uliyatimiz haqida so'zlab bermoqchimiz.</p>
+                    <p>Bizning hududimiz tabiiy go'zalligi, pok havosi va mehmondo'st aholisi bilan ajralib turadi. Bu yerda yashil hududlar, daraxtzorlar va dam olish maskanlari mavjud. Ayniqsa, odamlarning tabiatga bo'lgan hurmati hududimizning eng muhim jihatlaridan biridir.</p>
+                    
+                    <div class="presentation-quote">
+                        "Ekologik holatni yaxshilash maqsadida bir qator ishlar amalga oshirilmoqda"
+                    </div>
+                    
+                    <p>Hududimizda ekologik holatni yaxshilash maqsadida bir qator ishlar amalga oshirilmoqda. Masalan, ko'chat ekish aksiyalari, hududlarni tozalash hasharlari, chiqindilarni belgilangan joylarga tashlash targ'iboti olib borilmoqda. Bu tadbirlarda nafaqat kattalar, balki yoshlar ham faol ishtirok etmoqda.</p>
+                    <p>Bizning hududimizda piknik madaniyati ham asta-sekin rivojlanmoqda. Odamlar dam olish jarayonida tabiatni asrash, chiqindilarni yig'ishtirish va atrof-muhitga zarar yetkazmaslikka e'tibor berishmoqda. Bu esa ekologik madaniyat shakllanayotganidan dalolat beradi.</p>
+                    <p>Yoshlarimiz ekologiyaga befarq emas. Maktab va jamoat tadbirlarida ekologik mavzular ko'tarilib, turli targ'ibot ishlari olib borilmoqda. Biz yoshlar kelajak avlod uchun toza va sog'lom muhit qoldirishni o'z burchimiz deb bilamiz.</p>
+                    
+                    <div class="presentation-quote">
+                        "Bu bizning hudud, va uning ekologik holati ham bizga bog'liq"
+                    </div>
+                    
+                    <p>Xulosa qilib aytganda, bu bizning hudud, va uning ekologik holati ham bizga bog'liq. Agar har birimiz tabiatga mas'uliyat bilan yondashsak, hududimiz yanada chiroyli va yashash uchun qulay bo'ladi.</p>
+                    <p style="text-align: center; font-weight: bold; margin-top: 30px;">E'tiboringiz uchun rahmat!</p>
                 </div>
             </div>
         </div>
@@ -695,8 +797,8 @@
     <section id="facts">
         <div class="container">
             <div class="section-title">
-                <h2>Экологик фактлар</h2>
-                <p>Экология ҳақида қизиқарли ва ўқитиш фактлар</p>
+                <h2>Ekologik faktlar</h2>
+                <p>Ekologiya haqida qiziqarli va o'qitish faktlar</p>
             </div>
             <div class="facts-container" id="factsContainer">
                 <!-- Facts will be loaded by JavaScript -->
@@ -709,31 +811,31 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Зелёный Узбекистан</h3>
-                    <p>Узбекистон экологиясини яхшилашга қаратилган инициатива. Келинг, биргаликда янада яхши яшаймиз!</p>
+                    <h3>Yashil O'zbekiston</h3>
+                    <p>O'zbekiston ekologiyasini yaxshilashga qaratilgan tashabbus. Keling, birgalikda yanada yaxshi yashaymiz!</p>
                 </div>
                 <div class="footer-column">
-                    <h3>Меню</h3>
+                    <h3>Menyu</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Главная</a></li>
-                        <li><a href="#tips">Экосоветы</a></li>
-                        <li><a href="#water">Сув тежаш</a></li>
-                        <li><a href="#problems">Экопроблемы</a></li>
+                        <li><a href="#home">Bosh sahifa</a></li>
+                        <li><a href="#tips">Ekomaslahatlar</a></li>
+                        <li><a href="#water">Suv tejash</a></li>
+                        <li><a href="#problems">Muammolar</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Қўшимча</h3>
+                    <h3>Qo'shimcha</h3>
                     <ul class="footer-links">
-                        <li><a href="#recycling">Қайта ишлаш</a></li>
-                        <li><a href="#facts">Экологик фактлар</a></li>
-                        <li><a href="#">Яшил ҳаёт маслиҳатлари</a></li>
-                        <li><a href="#">Биз билан алоқа</a></li>
+                        <li><a href="#recycling">Qayta ishlash</a></li>
+                        <li><a href="#presentation">Taqdimot</a></li>
+                        <li><a href="#facts">Ekologik faktlar</a></li>
+                        <li><a href="#">Yashil hayot maslahatlari</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Зелёный Узбекистан. Барча ҳуқуқлар ҳимояланган.</p>
-                <p>Келинг, биргаликда янада яхши яшаймиз!</p>
+                <p>&copy; 2026 Ekologiyani himoya qilish - bizning burchimiz</p>
+                <p>Keling, birgalikda yanada yaxshi yashaymiz!</p>
             </div>
         </div>
     </footer>
@@ -743,84 +845,84 @@
         const dailyTips = [
             {
                 icon: "fas fa-bicycle",
-                title: "Велосипедда юринг",
-                description: "Қисқа масофаларга велосипедда юринг - ҳавни ифлослантирмайди. Бу сизнинг соглиғингиз учун фойдали, атмосфера учун эса тоза."
+                title: "Velosipedda yuring",
+                description: "Qisqa masofalarga velosipedda yuring - havni ifloslantirmaydi. Bu sizning sog'lig'ingiz uchun foydali, atmosfera uchun esa toza."
             },
             {
                 icon: "fas fa-shopping-bag",
-                title: "Қайта ишлатиладиган сумка",
-                description: "Харид қилганда, бир марталик пластик пакет ўрнига қайта ишлатиладиган мато сумка ёки сумкалардан фойдаланинг."
+                title: "Qayta ishlatiladigan sumka",
+                description: "Xarid qilganda, bir martalik plastik paket o'rniga qayta ishlatiladigan mato sumka yoki sumkalardan foydalaning."
             },
             {
                 icon: "fas fa-lightbulb",
-                title: "Энергия тежамкор чироклар",
-                description: "Ойдинчирокларни энергия тежамкор LED чирокларга алмаштиринг. Бу йилда 75% гача камрок электр энергияси сарфлайди."
+                title: "Energiya tejamkor chiroqlar",
+                description: "Oydinchirolarni energiya tejamkor LED chiroqlarga almashtiring. Bu yilda 75% gacha kamroq elektr energiyasi sarflaydi."
             },
             {
                 icon: "fas fa-recycle",
-                title: "Чиқиндиларни ажратинг",
-                description: "Чиқиндиларни пластик, шиша, металл ва қоғозга ажратиб ташланг. Бу қайта ишлаш жараёнини осонлаштиради."
+                title: "Chiqindilarni ajrating",
+                description: "Chiqindilarni plastik, shisha, metal va qog'ozga ajratib tashlang. Bu qayta ishlash jarayonini osonlashtiradi."
             },
             {
                 icon: "fas fa-leaf",
-                title: "Дағал озиқ-овқатлар",
-                description: "Дағал озиқ-овқатларни танланг - улар ишлов бериш жараёнида камроқ энергия сарфлайди ва камроқ чиқинди ҳосил қилади."
+                title: "Dag'al oziq-ovqatlar",
+                description: "Dag'al oziq-ovqatlarni tanlang - ular ishlov berish jarayonida kamroq energiya sarflaydi va kamroq chiqindi hosil qiladi."
             },
             {
                 icon: "fas fa-water",
-                title: "Сувни ақлли ишлатинг",
-                description: "Совуқ сувни ичишдан олдин уни шишада ёки идишда жонлатиб қўйинг, крандан оқиб кетаётган сувни бекор қилманг."
+                title: "Suvni aqlli ishlating",
+                description: "Sovuq suvni ichishdan oldin uni shishada yoki idishda jonlatib qo'ying, krandan oqib ketayotgan suvni bekor qilmang."
             }
         ];
 
         const ecologicalProblems = [
             {
                 icon: "fas fa-wind",
-                title: "Ҳаво ифлосланиши",
-                description: "Шаҳарларда транспорт ва саноат корхоналаридан чиқаётган чиқиндилар ҳаво ифлосланишига сабаб бўлмоқда."
+                title: "Havo ifloslanishi",
+                description: "Shaharlarda transport va sanoat korxonalaridan chiqayotgan chiqindilar havo ifloslanishiga sabab bo'lmogda."
             },
             {
                 icon: "fas fa-tint",
-                title: "Сув ресурсларининг камаяши",
-                description: "Иклим ўзгариши ва сувдан ноунум фойдаланиш туфайли сув ресурслари камая бошлади."
+                title: "Suv resurslarining kamayishi",
+                description: "Iqlim o'zgarishi va suvdan noo'rin foydalanish tufayli suv resurslari kamaya boshladi."
             },
             {
                 icon: "fas fa-trash",
-                title: "Чиқиндилар муаммоси",
-                description: "Чиқиндиларни тўғри ажратиб ташламаслик ва қайта ишлаш тизимининг етарлича ривожланмаганлиги."
+                title: "Chiqindilar muammosi",
+                description: "Chiqindilarni to'g'ri ajratib tashlamaslik va qayta ishlash tizimining etarli darajada rivojlanmaganligi."
             },
             {
                 icon: "fas fa-tree",
-                title: "Ўрмонларни кесиш",
-                description: "Ўрмонларни кесиш ва ўсимлик қопламининг камаяши туфайли эрозия ва иклим ўзгариши кучаймоқда."
+                title: "O'rmonlarni kesish",
+                description: "O'rmonlarni kesish va o'simlik qoplamining kamayishi tufayli eroziya va iqlim o'zgarishi kuchaymogda."
             }
         ];
 
         const ecologicalFacts = [
             {
                 number: "70%",
-                text: "Ўзбекистоннинг сув ресурсларини қишлоқ хўжалиги ишлатиши"
+                text: "O'zbekistonning suv resurslarini qishloq xo'jaligi ishlatishi"
             },
             {
                 number: "250+",
-                text: "Узбекистондаги қайта ишлаш марказлари сони"
+                text: "O'zbekistondagi qayta ishlash markazlari soni"
             },
             {
                 number: "15%",
-                text: "Ўрмон майдонининг мамлакат умумий майдонига нисбати"
+                text: "O'rmon maydonining mamlakat umumiy maydoniga nisbati"
             },
             {
                 number: "2025",
-                text: "Ўзбекистонда чиқиндиларни 30% гача қайта ишлаш мақсади"
+                text: "O'zbekistonda chiqindilarni 30% gacha qayta ishlash maqsadi"
             }
         ];
 
         const greenLifeTips = [
-            "Ишдан кейин компютер ва бошқа ускуналарни тўлиқ ўчириб қўйинг",
-            "Қўшимча ёруғлик зарур бўлмаганда чирокларни ўчириб қўйинг",
-            "Ўсимликлар экинг - улар ҳавони тозалайди ва иклимни яхшилайди",
-            "Маҳаллий ишлаб чиқарувчиларни қуллаб-қувватланг - бу ташима ёкини камайтиради",
-            "Электрон ҳужжат айлантириш - қоғоз ишлатишни камайтиринг"
+            "Ishdan keyin kompyuter va boshqa uskunalarni to'liq o'chirib qo'ying",
+            "Qo'shimcha yorug'lik zarur bo'lmaganda chiroqlarni o'chirib qo'ying",
+            "O'simliklar eking - ular havoni tozalaydi va iqlimni yaxshilaydi",
+            "Mahalliy ishlab chiqaruvchilarni qo'llab-quvvatlang - bu tashima yoqini kamaytiradi",
+            "Elektron hujjat aylantirish - qog'oz ishlatishni kamaytiring"
         ];
 
         // DOM elements
@@ -874,7 +976,7 @@
 
             // Animate elements on scroll
             const animateOnScroll = () => {
-                const elements = document.querySelectorAll('.tip-card, .problem-item, .fact-card');
+                const elements = document.querySelectorAll('.tip-card, .problem-item, .fact-card, .presentation-content');
                 
                 elements.forEach(element => {
                     const elementTop = element.getBoundingClientRect().top;
@@ -882,15 +984,20 @@
                     
                     if (elementTop < window.innerHeight - elementVisible) {
                         element.style.opacity = "1";
-                        element.style.transform = element.classList.contains('tip-card') || element.classList.contains('fact-card') 
-                            ? "scale(1)" 
-                            : "translateX(0)";
+                        
+                        if (element.classList.contains('tip-card') || element.classList.contains('fact-card')) {
+                            element.style.transform = "scale(1)";
+                        } else if (element.classList.contains('problem-item')) {
+                            element.style.transform = "translateX(0)";
+                        } else if (element.classList.contains('presentation-content')) {
+                            element.style.transform = "translateY(0)";
+                        }
                     }
                 });
             };
 
             // Initial animation trigger
-            animateOnScroll();
+            setTimeout(animateOnScroll, 500);
             
             // Listen for scroll events
             window.addEventListener('scroll', animateOnScroll);
