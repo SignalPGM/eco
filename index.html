@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экология Узбекистана | Зелёная жизнь</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2ecc71;
+            --primary-dark: #27ae60;
+            --secondary: #3498db;
+            --light: #f9f9f9;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f9f7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s forwards 0.3s;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s forwards 0.6s;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s forwards 0.9s;
+        }
+
+        .hero-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(46, 204, 113, 0.3);
+        }
+
+        .hero-bg-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--primary);
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--secondary);
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            background-color: #e74c3c;
+            top: 40%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* Tips Grid */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tip-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .tip-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .tip-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .tip-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .tip-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* Problems Section */
+        .problems-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .problem-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .problem-item:hover {
+            transform: translateX(5px);
+        }
+
+        .problem-item i {
+            font-size: 2rem;
+            color: #e74c3c;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        /* Facts Section */
+        .facts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .fact-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .fact-card:hover {
+            transform: scale(1.05);
+        }
+
+        .fact-card h3 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .fact-card p {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* Recycling Section */
+        .recycling-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .recycling-text {
+            flex: 1;
+        }
+
+        .recycling-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .recycling-content {
+                flex-direction: column;
+            }
+            
+            .recycling-image {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .facts-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .problem-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 140px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+        }
+
+        /* Active menu item */
+        .active {
+            color: var(--primary) !important;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            position: fixed;
+            top: 80px;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: calc(100vh - 80px);
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            z-index: 999;
+            padding: 30px;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 25px;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Зелёный Узбекистан</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Главная</a></li>
+                    <li><a href="#tips">Экосоветы</a></li>
+                    <li><a href="#problems">Экопроблемы</a></li>
+                    <li><a href="#recycling">Переработка</a></li>
+                    <li><a href="#facts">Факты</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home" class="active">Главная</a></li>
+            <li><a href="#tips">Экосоветы</a></li>
+            <li><a href="#problems">Экопроблемы</a></li>
+            <li><a href="#recycling">Переработка</a></li>
+            <li><a href="#facts">Факты</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container hero-content">
+            <h1>Кунлик экологик маслиҳат</h1>
+            <p>Келинг, биргаликда янада яхши яшаймиз! Узбекистоннинг экологиясини яхшилаш учун кичик қадамлар билан катта ўзгаришларга эришимиз мумкин.</p>
+            <a href="#tips" class="hero-btn">Экосоветларни кўриш</a>
+        </div>
+    </section>
+
+    <!-- Daily Tips Section -->
+    <section id="tips">
+        <div class="container">
+            <div class="section-title">
+                <h2>Кунлик экологик маслиҳатлар</h2>
+                <p>Хар куни амалга ошириш осон бўлган экологик маслиҳатлар</p>
+            </div>
+            <div class="tips-grid" id="tipsGrid">
+                <!-- Tips will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Water Saving Section -->
+    <section id="water" style="background-color: #f0f9ff;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Суз тежаш маслиҳатлари</h2>
+                <p>Узбекистон - сув хазинаси чегараланган мамлакат, сувни тежаш жуда муҳим</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card" data-delay="0">
+                    <i class="fas fa-tint"></i>
+                    <h3>Душда ювининг</h3>
+                    <p>Ваннада ювинмасдан, душда ювиниш орқали сувни 70% гача тежашингиз мумкин.</p>
+                </div>
+                <div class="tip-card" data-delay="0.2">
+                    <i class="fas fa-faucet"></i>
+                    <h3>Кранни ёпиб қўйинг</h3>
+                    <p>Тиш ёткаяптида ёки совунланаяптида крании ёпиб қўйинг, соатга 6 литр сув тежашингиз мумкин.</p>
+                </div>
+                <div class="tip-card" data-delay="0.4">
+                    <i class="fas fa-tree"></i>
+                    <h3>Қуриқчиликка чўзимли ўсимликлар</h3>
+                    <p>Уйингиз атрофига кам сув сарфлайдиган ўсимликлар экинг.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecological Problems Section -->
+    <section id="problems">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ўзбекистондаги экологик муаммолар</h2>
+                <p>Бизнинг мамлакатимиздаги асосий экологик муаммолар</p>
+            </div>
+            <div class="problems-list" id="problemsList">
+                <!-- Problems will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recycling Section -->
+    <section id="recycling" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Қайта ишлаш ва чиқиндилар</h2>
+                <p>Чиқиндиларни ажратиш ва қайта ишлаш - экологияни сақлашнинг асосий йўли</p>
+            </div>
+            
+            <div class="recycling-content">
+                <div class="recycling-text">
+                    <h3>Қайта ишлаш қўлланмаси</h3>
+                    <p>Қайта ишлашни тўғри ташкил қилиш экологик таъсирни камайтиришда муҳим ахамиятга эга. Пластик, шиша, металл ва қоғоз чиқиндиларини алоҳида ажратиб қайта ишлаш мумкин.</p>
+                    <p>Ҳар бир оила чиқиндиларни ажратиш орқали йилда 1 тоннадан ортиқ чиқиндини қайта ишлаш имкониятига эга.</p>
+                    <h4 style="margin-top: 20px;">Қайта ишлаш марказлари</h4>
+                    <p>Тошкент, Самарқанд, Бухоро каби шаҳарларда қайта ишлаш марказлари фаолият кўрсатмоқда. Уларда чиқиндилар қабул қилиниб, қайта ишланади.</p>
+                </div>
+                <div class="recycling-image">
+                    <div>ЭКОЛОГИК ТОЗА ДУНЁ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts Section -->
+    <section id="facts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Экологик фактлар</h2>
+                <p>Экология ҳақида қизиқарли ва ўқитиш фактлар</p>
+            </div>
+            <div class="facts-container" id="factsContainer">
+                <!-- Facts will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Зелёный Узбекистан</h3>
+                    <p>Узбекистон экологиясини яхшилашга қаратилган инициатива. Келинг, биргаликда янада яхши яшаймиз!</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Меню</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#tips">Экосоветы</a></li>
+                        <li><a href="#water">Сув тежаш</a></li>
+                        <li><a href="#problems">Экопроблемы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Қўшимча</h3>
+                    <ul class="footer-links">
+                        <li><a href="#recycling">Қайта ишлаш</a></li>
+                        <li><a href="#facts">Экологик фактлар</a></li>
+                        <li><a href="#">Яшил ҳаёт маслиҳатлари</a></li>
+                        <li><a href="#">Биз билан алоқа</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Зелёный Узбекистан. Барча ҳуқуқлар ҳимояланган.</p>
+                <p>Келинг, биргаликда янада яхши яшаймиз!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data from Telegram bot
+        const dailyTips = [
+            {
+                icon: "fas fa-bicycle",
+                title: "Велосипедда юринг",
+                description: "Қисқа масофаларга велосипедда юринг - ҳавни ифлослантирмайди. Бу сизнинг соглиғингиз учун фойдали, атмосфера учун эса тоза."
+            },
+            {
+                icon: "fas fa-shopping-bag",
+                title: "Қайта ишлатиладиган сумка",
+                description: "Харид қилганда, бир марталик пластик пакет ўрнига қайта ишлатиладиган мато сумка ёки сумкалардан фойдаланинг."
+            },
+            {
+                icon: "fas fa-lightbulb",
+                title: "Энергия тежамкор чироклар",
+                description: "Ойдинчирокларни энергия тежамкор LED чирокларга алмаштиринг. Бу йилда 75% гача камрок электр энергияси сарфлайди."
+            },
+            {
+                icon: "fas fa-recycle",
+                title: "Чиқиндиларни ажратинг",
+                description: "Чиқиндиларни пластик, шиша, металл ва қоғозга ажратиб ташланг. Бу қайта ишлаш жараёнини осонлаштиради."
+            },
+            {
+                icon: "fas fa-leaf",
+                title: "Дағал озиқ-овқатлар",
+                description: "Дағал озиқ-овқатларни танланг - улар ишлов бериш жараёнида камроқ энергия сарфлайди ва камроқ чиқинди ҳосил қилади."
+            },
+            {
+                icon: "fas fa-water",
+                title: "Сувни ақлли ишлатинг",
+                description: "Совуқ сувни ичишдан олдин уни шишада ёки идишда жонлатиб қўйинг, крандан оқиб кетаётган сувни бекор қилманг."
+            }
+        ];
+
+        const ecologicalProblems = [
+            {
+                icon: "fas fa-wind",
+                title: "Ҳаво ифлосланиши",
+                description: "Шаҳарларда транспорт ва саноат корхоналаридан чиқаётган чиқиндилар ҳаво ифлосланишига сабаб бўлмоқда."
+            },
+            {
+                icon: "fas fa-tint",
+                title: "Сув ресурсларининг камаяши",
+                description: "Иклим ўзгариши ва сувдан ноунум фойдаланиш туфайли сув ресурслари камая бошлади."
+            },
+            {
+                icon: "fas fa-trash",
+                title: "Чиқиндилар муаммоси",
+                description: "Чиқиндиларни тўғри ажратиб ташламаслик ва қайта ишлаш тизимининг етарлича ривожланмаганлиги."
+            },
+            {
+                icon: "fas fa-tree",
+                title: "Ўрмонларни кесиш",
+                description: "Ўрмонларни кесиш ва ўсимлик қопламининг камаяши туфайли эрозия ва иклим ўзгариши кучаймоқда."
+            }
+        ];
+
+        const ecologicalFacts = [
+            {
+                number: "70%",
+                text: "Ўзбекистоннинг сув ресурсларини қишлоқ хўжалиги ишлатиши"
+            },
+            {
+                number: "250+",
+                text: "Узбекистондаги қайта ишлаш марказлари сони"
+            },
+            {
+                number: "15%",
+                text: "Ўрмон майдонининг мамлакат умумий майдонига нисбати"
+            },
+            {
+                number: "2025",
+                text: "Ўзбекистонда чиқиндиларни 30% гача қайта ишлаш мақсади"
+            }
+        ];
+
+        const greenLifeTips = [
+            "Ишдан кейин компютер ва бошқа ускуналарни тўлиқ ўчириб қўйинг",
+            "Қўшимча ёруғлик зарур бўлмаганда чирокларни ўчириб қўйинг",
+            "Ўсимликлар экинг - улар ҳавони тозалайди ва иклимни яхшилайди",
+            "Маҳаллий ишлаб чиқарувчиларни қуллаб-қувватланг - бу ташима ёкини камайтиради",
+            "Электрон ҳужжат айлантириш - қоғоз ишлатишни камайтиринг"
+        ];
+
+        // DOM elements
+        const tipsGrid = document.getElementById('tipsGrid');
+        const problemsList = document.getElementById('problemsList');
+        const factsContainer = document.getElementById('factsContainer');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        // Initialize the page with data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load daily tips
+            dailyTips.forEach((tip, index) => {
+                const tipCard = document.createElement('div');
+                tipCard.className = 'tip-card';
+                tipCard.style.animationDelay = `${index * 0.2}s`;
+                tipCard.innerHTML = `
+                    <i class="${tip.icon}"></i>
+                    <h3>${tip.title}</h3>
+                    <p>${tip.description}</p>
+                `;
+                tipsGrid.appendChild(tipCard);
+            });
+
+            // Load ecological problems
+            ecologicalProblems.forEach((problem, index) => {
+                const problemItem = document.createElement('div');
+                problemItem.className = 'problem-item';
+                problemItem.style.animationDelay = `${index * 0.3}s`;
+                problemItem.innerHTML = `
+                    <i class="${problem.icon}"></i>
+                    <div>
+                        <h3>${problem.title}</h3>
+                        <p>${problem.description}</p>
+                    </div>
+                `;
+                problemsList.appendChild(problemItem);
+            });
+
+            // Load ecological facts
+            ecologicalFacts.forEach((fact, index) => {
+                const factCard = document.createElement('div');
+                factCard.className = 'fact-card';
+                factCard.style.animationDelay = `${index * 0.2}s`;
+                factCard.innerHTML = `
+                    <h3>${fact.number}</h3>
+                    <p>${fact.text}</p>
+                `;
+                factsContainer.appendChild(factCard);
+            });
+
+            // Animate elements on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.tip-card, .problem-item, .fact-card');
+                
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = "1";
+                        element.style.transform = element.classList.contains('tip-card') || element.classList.contains('fact-card') 
+                            ? "scale(1)" 
+                            : "translateX(0)";
+                    }
+                });
+            };
+
+            // Initial animation trigger
+            animateOnScroll();
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', animateOnScroll);
+
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Update active nav link on scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a, .mobile-menu a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if(scrollY >= (sectionTop - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
